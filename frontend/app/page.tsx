@@ -2,8 +2,13 @@
 
 import { useQuery } from "@apollo/client";
 import { SEARCH_BOOKS } from "@/graphql/queries/books";
-import { SearchBar, CenteredContainer, BookCard } from "@components";
-import { Book, QueryData } from "@types";
+import {
+  BookCard,
+  SearchBar,
+  Pagination,
+  CenteredContainer,
+} from "@components";
+import { QueryData, Book } from "@types";
 
 export interface FilterProps {
   query: string;
@@ -15,6 +20,7 @@ export interface HomeProps {
 }
 
 export default function Home({ searchParams }: HomeProps) {
+  console.log("searchParams", searchParams);
   const query = searchParams.query;
   const page =
     typeof searchParams.page === "string"
@@ -75,6 +81,8 @@ export default function Home({ searchParams }: HomeProps) {
                 <BookCard book={book} key={book.id} />
               ))}
             </div>
+
+            <Pagination currentPage={page} totalPages={totalPages} />
           </section>
         ) : (
           query && (
