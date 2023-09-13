@@ -1,0 +1,19 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type BooksResponse {
+  totalItems: Float!
+  books: [Book!]!
+}
+
+type Book {
+  id: String!
+  title: String!
+  authors: [String!]
+  thumbnail: String
+}
+
+type Query {
+  searchBooks(query: String!, page: Int! = 0): BooksResponse!
+}
