@@ -1,5 +1,3 @@
-
-
 export interface Author {
   name: string;
 }
@@ -9,4 +7,11 @@ export interface Book {
   title: string;
   authors: Author[];
   thumbnail: string;
+}
+
+export interface QueryData {
+  searchBooks: {
+    books: Book[];
+    totalItems: number;
+  };
 }
