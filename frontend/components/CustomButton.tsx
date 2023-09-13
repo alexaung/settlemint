@@ -1,10 +1,27 @@
 "use client";
 
 import Image from "next/image";
+import { MouseEventHandler } from "react";
 
-import { CustomButtonProps } from "@types";
+export interface CustomButtonProps {
+  isDisabled?: boolean;
+  btnType?: "button" | "submit";
+  containerStyles?: string;
+  textStyles?: string;
+  title: string;
+  rightIcon?: string;
+  handleClick?: MouseEventHandler<HTMLButtonElement>;
+}
 
-const Button = ({ isDisabled, btnType, containerStyles, textStyles, title, rightIcon, handleClick }: CustomButtonProps) => (
+const Button = ({
+  isDisabled,
+  btnType,
+  containerStyles,
+  textStyles,
+  title,
+  rightIcon,
+  handleClick,
+}: CustomButtonProps) => (
   <button
     disabled={isDisabled}
     type={btnType || "button"}
