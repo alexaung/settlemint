@@ -13,7 +13,7 @@ This is the frontend of the Settlemint application built with Next.js and Apollo
 1. **Clone the Repository**:
 
    ```bash
-   git clone [repository-url]
+   git clone [https://github.com/alexaung/settlemint.git]
    cd settlemint/frontend
    ```
 
